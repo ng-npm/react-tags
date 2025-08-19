@@ -1,6 +1,6 @@
 # react-tags
 
-### **Resumo do Funcionamento
+### **Resumo do Funcionamento**
 
  1 - npm install react-tags: O NPM instala o pacote react-tags na sua pasta node_modules. Automaticamente, ele roda o script postinstall que, por sua vez, executa o install-all.js. Este script usa o fs-extra para copiar todos os arquivos da pasta node_modules/react-tags/assets/tags para a sua pasta de projeto assets/tags.
 
@@ -9,9 +9,9 @@
 --- 
 1 . Estrutura do Projeto
 O projeto react-tags terá a seguinte estrutura:
-
+<pre>
 /react-tags
-├── /assets
+├── /assets 
 │   └── /tags
 │       ├── MyComponent.js
 │       ├── AnotherComponent.js
@@ -20,12 +20,12 @@ O projeto react-tags terá a seguinte estrutura:
 │   └── cli.js  // Script executado pelo 'npx'
 ├── package.json
 └── README.md
+</pre>
 
 2 O package.json
 Este é o coração do projeto. Ele definirá os scripts que farão a mágica acontecer.
 
-JSON
-
+```json
 {
   "name": "react-tags",
   "version": "1.0.0",
@@ -45,6 +45,7 @@ JSON
   "author": "Seu Nome",
   "license": "MIT"
 }
+```
 
  - "scripts": { "postinstall": "node ./bin/install-all.js" }: Esta linha é o que faz o npm install copiar todos os arquivos. O script postinstall é um hook do NPM que é executado automaticamente após o pacote ser instalado. Ele chamará o nosso script install-all.js.
  - "bin": { "react-tags": "./bin/cli.js" }: Esta propriedade informa ao npx que, quando o usuário rodar npx react-tags, ele deve executar o arquivo bin/cli.js. 
@@ -52,7 +53,7 @@ JSON
 3 O Script para npm install (./bin/install-all.js)
 Este script é responsável por copiar a pasta /assets/tags inteira. Ele será chamado automaticamente pelo NPM.
 
-JavaScript
+```JavaScript
 
 #!/usr/bin/env node
 
@@ -70,14 +71,15 @@ fs.ensureDirSync(targetPath);
 // Copia todos os arquivos da origem para o destino
 fs.copySync(sourcePath, targetPath);
 
-console.log('--- Instalação completa! ---'); 
+console.log('--- Instalação completa! ---');
+```
 
  - Nota: Para usar fs-extra, você precisará adicioná-lo como uma dependência de desenvolvimento no seu projeto com npm install fs-extra. Ele simplifica as operações de arquivo. 
 
 4 O Script para npx add (./bin/cli.js)
 Este script é o que processa os argumentos e copia apenas o componente específico. Ele será executado quando o usuário rodar npx react-tags [nome-do-componente].
 
-JavaScript
+```JavaScript
 
 #!/usr/bin/env node
 
@@ -112,6 +114,6 @@ fs.ensureDirSync(targetPath);
 fs.copySync(sourceFile, targetFile);
 
 console.log(`--- ${componentName} copiado com sucesso para ${targetPath} ---`);
- 
+```
 
 
