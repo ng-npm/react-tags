@@ -1,0 +1,13 @@
+
+## structure 
+/react-tags
+├── /assets
+│   └── /tags
+│       ├── MyComponent.js
+│       ├── AnotherComponent.js
+│       └── ...
+├── /bin
+│   └── cli.js  // Script executado pelo 'npx'
+├── package.json
+└── README.md 
+

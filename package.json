@@ -1,0 +1,22 @@
+{
+  "name": "react-tags",
+  "version": "1.0.0",
+  "description": "A collection of reusable React components for your project.",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node ./bin/install-all.js"
+  },
+  "bin": {
+    "react-tags": "./bin/cli.js"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "tags"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "devDependencies": {
+    "fs-extra": "^11.3.1"
+  }
+}
