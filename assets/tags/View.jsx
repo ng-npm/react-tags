@@ -6,6 +6,6 @@ export function View( { children, as = "div", ...props } ) {
 }
 
 export function Text( { children, as = "span", ...props } ) {
-   const ELement = as;
+   const Element = as;
    return <Element { ...props }>{ children }</Element>;
 }
