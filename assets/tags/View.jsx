@@ -1,11 +1,6 @@
 
 // View.jsx
-export function View( { children, as = "div", ...props } ) {
-   const Element = as;
-   return <Element { ...props }>{ children }</Element>;
-}
-
-export function Text( { children, as = "span", ...props } ) {
-   const Element = as;
-   return <Element { ...props }>{ children }</Element>;
+export default function TagView( { children, tag = "div", ...props } ) {
+  const Tag = tag;
+   return <Tag { ...props }>{ children }</Tag>;
 }

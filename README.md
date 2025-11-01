@@ -1,4 +1,25 @@
+
 # react-tags
+
+```JavaScript
+export default function View( { children, as = "div", ...props } ) {
+  const Element = as;
+  return(
+    <Element { ...props }>
+      { children }
+    </Element>
+  );
+}
+
+export default function Text( { children, as = "span", ...props } ) {
+  const Element = as;
+  return(
+    <Element { ...props }>
+      { children }
+    </Element>
+  );
+}
+```
 
 ### **Resumo do Funcionamento**
 
